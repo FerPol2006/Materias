@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Materias</title>
+</head>
+<body>
+    <h1>Listado de materias</h1>
+    <a th:href="@{/materias/nueva}">Agregar Materia</a>
+    <br>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Créditos</th>
+            <th>Acciones</th>
+        </tr>
+        <tbody>
+            <tr th:each="materia:${materias}">
+            <td th:text="${materia.id}"></td>
+            <td th:text="${materia.nombre}"> </td>
+            <td th:text="${materia.creditos}"></td>
+                <td>
+                    <a th:href="@{/materias/actualizar/{id}(id=${materia.id})}">Actualizar |</a>
+                    <a th:href="@{/materias/eliminar/{id}(id=${materia.id})}">Eliminar</a>
+
+                </td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

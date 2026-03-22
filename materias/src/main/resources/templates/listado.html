@@ -22,7 +22,8 @@
             <td th:text="${materia.creditos}"></td>
                 <td>
                     <a th:href="@{/materias/actualizar/{id}(id=${materia.id})}">Actualizar |</a>
-                    <a th:href="@{/materias/eliminar/{id}(id=${materia.id})}">Eliminar</a>
+                    <a th:href="@{/materias/eliminar/{id}(id=${materia.id})}"
+                       th:onclick="|return confirm('¿Seguro que deseas eliminar la materia ${materia.nombre}?');|">Eliminar</a>
 
                 </td>
         </tr>

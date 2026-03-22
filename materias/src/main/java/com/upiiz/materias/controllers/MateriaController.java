@@ -3,7 +3,6 @@ import com.upiiz.materias.DTO.MateriaDTO;
 import com.upiiz.materias.models.Materia;
 import org.springframework.ui.Model;
 import com.upiiz.materias.services.MateriaService;
-import org.jspecify.annotations.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +20,7 @@ public class MateriaController {
     @GetMapping
     public String listarMaterias(Model model){
         model.addAttribute("materias", materiaService.getListadoMaterias());
-        return "listado.html";
+        return "listado";
     }
 
     //Eliminar materia

@@ -23,7 +23,8 @@
                 <td>
                     <a th:href="@{/materias/actualizar/{id}(id=${materia.id})}">Actualizar |</a>
                     <a th:href="@{/materias/eliminar/{id}(id=${materia.id})}"
-                       th:onclick="|return confirm('¿Seguro que deseas eliminar la materia ${materia.nombre}?');|">Eliminar</a>
+                       th:attr="data-confirm-message=|¿Seguro que deseas eliminar la materia ${materia.nombre}?|"
+                       onclick="return confirm(this.dataset.confirmMessage);">Eliminar</a>
 
                 </td>
         </tr>
